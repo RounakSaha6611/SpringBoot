@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <bean id="psqlData" class="com.inversion.of.control.UserDataFromPSQL">
+    </bean>
+
+    <bean id="psqlUser" class="com.inversion.of.control.UserManager">
+        <constructor-arg ref="psqlData"></constructor-arg>
+    </bean>
+
+    <bean id="wsData" class="com.inversion.of.control.UserDataFromWS">
+    </bean>
+
+    <bean id="wsUser" class="com.inversion.of.control.UserManager">
+        <constructor-arg ref="wsData"></constructor-arg>
+    </bean>
+
+</beans>
